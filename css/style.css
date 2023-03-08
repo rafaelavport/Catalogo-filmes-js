@@ -8,3 +8,12 @@
     flex-wrap: wrap;
     padding: 2rem;
 }
+.card {
+    width: 170px;
+    height: 100px;
+    transition: width 2s;
+  }
+.card:hover {
+    width: 230px;
+}
+/*mudar botao buscar
