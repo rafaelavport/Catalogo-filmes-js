@@ -1,19 +1,27 @@
 *{
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
+}
+body{
+    justify-content: center;
 }
 #lista-filmes{
-    display:flex ;
-    justify-content: start;
+    display:flex;
+    justify-content:start;
     flex-wrap: wrap;
-    padding: 2rem;
+    text-align:center;
 }
 .card {
-    width: 170px;
-    height: 100px;
-    margin: auto;
-    transition: width 2s;
+    width: 15vw;
+    margin: 2%;
+    transition: width 1s;
   }
-.card:hover {
-    width: 230px;
+.card img{
+    height: 40vh;
 }
+.card:hover {
+    width: 17vw;
+}
+
+
