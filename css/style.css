@@ -11,9 +11,9 @@
 .card {
     width: 170px;
     height: 100px;
+    margin: auto;
     transition: width 2s;
   }
 .card:hover {
     width: 230px;
 }
-/*mudar botao buscar
