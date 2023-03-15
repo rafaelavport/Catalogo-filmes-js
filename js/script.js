@@ -97,7 +97,7 @@ getBtnDetalhes=()=>{
     return this.btnDetalhes;
 }
 let detalhesFilme = async (id)=>{
-    fetch("http://www.omdbapi.com/?i=tt3896198&apikey=21ad4a64&s="+id)
+    fetch("http://www.omdbapi.com/?apikey=21ad4a64&i="+id)
     .then((resp)=> resp.json())
     .then((resp)=> {
         console.log(resp)
