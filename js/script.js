@@ -102,4 +102,5 @@ let detalhesFilme = async (id)=>{
     .then((resp)=> {
         console.log(resp)
     });
+    
 }

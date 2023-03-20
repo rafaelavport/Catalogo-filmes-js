@@ -23,5 +23,9 @@ body{
 .card:hover {
     width: 17vw;
 }
-
+.btnDetalhesFilme{
+    margin: 5vh;
+    border: 2vh;
+    border-color: rgb(0, 0, 0);
+}
 
