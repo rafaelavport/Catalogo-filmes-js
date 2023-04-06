@@ -7,25 +7,98 @@ body{
     justify-content: center;
 }
 #lista-filmes{
-    display:flex;
-    justify-content:start;
+    display: flex;
+    justify-content: start;
     flex-wrap: wrap;
-    text-align:center;
+    text-align: center;
 }
-.card {
-    width: 15vw;
-    margin: 2%;
+.btnDetalhesFilme{
+    margin: 5vh;
+    border: 2vh;
+}
+#mostrar-filme{
+    width: 500px;
+    height: 500px;
+    background-color: black;
+    z-index: 10;
+    position: fixed;
+    left: 300px;
+    top: 100px;
+    float: left;
+    display: none;
+}
+.card button{
+    width: 100%;
+    border: 1px solid #000;
+    border-radius: 5px;
+    padding: 0.5rem;
+    margin: 0.5rem;
+    font-size: 1rem;
+    background-color: #000;
+    color: #fff;
+    cursor: pointer;
+}
+.card button:hover{
+    background-color: #fff;
+    color: #000;
+}
+.card{
+    width: 14rem;
+    margin: 1rem;
+    border: 1px solid #000;
+    border-radius: 5px;
+    padding: 0.5rem;
+    font-size: 1rem;
+    text-align: center;
     transition: width 1s;
-  }
+    display: flex;
+}
 .card img{
     height: 40vh;
 }
 .card:hover {
     width: 17vw;
 }
-.btnDetalhesFilme{
-    margin: 5vh;
-    border: 2vh;
-    border-color: rgb(0, 0, 0);
+.cardDetalhes{
+    width: 60rem;
+    height: 32rem;
+    background-color: #ffffff;
+    display: inline-flex;
+    float: inline-end;
+    text-align: center;
 }
+#btnFechar{
+    width: 100%;
+    border: 1px solid #000;
+    border-radius: 5px;
+    margin: 0 10px 10px 0;
+    padding: 0.5rem;
+    font-size: 1rem;
+    background-color: #000;
+    color: #fff;
+    cursor: pointer;
+}
+#btnFechar:hover{
+    background-color: #fff;
+    color: #000;
+}  
+#btnSalvar{
+    width: 100%;
+    border: 1px solid #000;
+    border-radius: 5px;
+    margin: 0 10px 10px 0;
+    padding: 0.5rem;
+    font-size: 1rem;
+    background-color: #000;
+    color: #fff;
+    cursor: pointer;
+}
+#btnSalvar:hover{
+    background-color: #fff;
+    color: #000;
+}   
+h5{
+    margin: 5%;
+}
+
 
