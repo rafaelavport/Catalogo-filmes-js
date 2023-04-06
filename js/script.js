@@ -88,7 +88,7 @@ document.querySelector('.favoritos').onclick = () =>{
 } 
             
 let detalhesFilme =  (id)=>{
-    fetch("https://www.omdbapi.com/?apikey=956c739e&i="+id)
+    fetch("http://www.omdbapi.com/?apikey=21ad4a64&i="+id)
     .then ((resp)=> resp.json())
     .then ((resp)=>{
         console.log (resp); 
