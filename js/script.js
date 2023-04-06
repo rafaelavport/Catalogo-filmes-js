@@ -1,8 +1,7 @@
 let inputBuscarFilme = document.querySelector("#input-buscar-filme");
 let btnBuscarFilme = document.querySelector("#btn-buscar-filme");
 let btnDetalhes = document.querySelector("#btn-detalhes");
-let btnSalvar = document.querySelector("#btn-salvar");
-let btn
+
 
 btnBuscarFilme.onclick = () => {
     if(inputBuscarFilme.ariaValueMax.length > 0){
@@ -59,6 +58,34 @@ let listarFilmes = async (filmes)=>{
         });
     }
 }
+const listarFavoritos = () =>{
+    let strFavoritos = localStorage.getItem("favoritos");
+    let filmeFav = JSON.parse(strFavoritos);
+    let filmes = new Array();
+    filmeFav.forEach((item) =>{
+        let filme = new Filme(
+            item.id,
+            item.titulo,
+            item.ano,
+            item.genero,
+            item.duracao,
+            item.cartaz,
+            item.direcao,
+            item.elenco,
+            item.classificacao,
+            item.avaliacao
+        );
+        filmes.push(filme);
+    });
+    listarFilmes(filmes);
+}  
+
+document.querySelector('.favoritos').onclick = () =>{
+    listarFavoritos();
+    document.querySelector('.home').classList.remove("active");
+    document.querySelector('.favoritos').classList.add("active");
+    divEditar.classList.add("hidden");
+} 
             
 let detalhesFilme =  (id)=>{
     fetch("https://www.omdbapi.com/?apikey=956c739e&i="+id)
@@ -89,8 +116,33 @@ let detalhesFilme =  (id)=>{
             };
 
             document.querySelector("#btnSalvar").onclick = () => {
-                salvarFilme(filme);
+                document.querySelector("#btnSalvar").addEventListener("click", () => {
+                    const strFilme = localStorage.getItem("favoritos");
+                    let filmes = null;
+                    let flag = 0;
+                    if(strFilme){
+                        filmes = JSON.parse(strFilme);
+                        filmes.forEach((item)=>{
+                            if(item.id === filme.id){
+                                alert(`${filme.titulo} já está nos favoritos!`);   
+                                flag++;
+                                return false;
+                            }
+                        });
+                        filmes.push(filme);
+                    }
+                    else{
+                        filmes=[filme];
+                    }
+                    if(flag === 0){
+                        filmes = JSON.stringify(filmes);
+                        localStorage.setItem("favoritos",filmes);
+                    }
+                    
+                })
+                
             };
+            
             
             document.querySelector("#lista-filmes").style.display="none";
             document.querySelector("#mostrar-filme").style.display="block";

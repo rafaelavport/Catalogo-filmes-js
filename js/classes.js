@@ -125,6 +125,10 @@ class Filme{
         btnSalvar.appendChild(document.createTextNode("Salvar"));
         btnSalvar.setAttribute("id","btnSalvar")
 
+        let btnExcluir = document.createElement("button");
+        btnExcluir.appendChild(document.createTextNode("Excluir"));
+        btnExcluir.setAttribute("id","btnExcluir");
+
         hCardTitle.appendChild (document.createTextNode(this.titulo));
         divGenero.appendChild(document.createTextNode(this.genero));
         divAnoProducao.appendChild(document.createTextNode(this.ano));
@@ -146,6 +150,7 @@ class Filme{
         divDetalhes.appendChild(divAvaliacao);
         divDetalhes.appendChild(btnFechar);
         divDetalhes.appendChild(btnSalvar);
+        divDetalhes.appendChild(btnExcluir);
 
         cardDetalhes.appendChild (imgCartaz);
         cardDetalhes.appendChild (hCardTitle);
